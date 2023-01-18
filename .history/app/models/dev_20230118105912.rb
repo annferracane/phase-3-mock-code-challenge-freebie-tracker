@@ -10,11 +10,10 @@ class Dev < ActiveRecord::Base
     end
 
     def give_away(dev, freebie)
-        # Brooke showed: freebie.update(dev: dev) unless freebie.dev != self
-        
         if dev.class == Dev && freebie.class == Freebie
-            if freebie.dev == self
-                # freebie.update(dev_id: dev.id)
+            
+            if freebie.dev_id == self.id
+                freebie.update(dev_id: dev.id)
                 freebie.update(dev: dev)
             else
                 "You do not own this freebie. Thus, you cannot give it away."

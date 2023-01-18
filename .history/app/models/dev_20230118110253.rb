@@ -10,7 +10,6 @@ class Dev < ActiveRecord::Base
     end
 
     def give_away(dev, freebie)
-        # Brooke showed: freebie.update(dev: dev) unless freebie.dev != self
         
         if dev.class == Dev && freebie.class == Freebie
             if freebie.dev == self
