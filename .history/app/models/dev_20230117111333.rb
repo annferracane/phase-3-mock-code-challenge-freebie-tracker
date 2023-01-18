@@ -10,11 +10,9 @@ class Dev < ActiveRecord::Base
         if dev.class == Dev && freebie.class == Freebie
             if freebie.dev_id == self.id
                 freebie.update(dev_id: dev.id)
-            else
-                "You do not own this freebie. Thus, you cannot give it away."
             end
         else
-            "You are trying to give a #{freebie.class} to a #{dev.class}. You can only give a Freebie to a Dev."
+            "You are trying to give a #{freebie.class} to a "
         end
     end
 end
